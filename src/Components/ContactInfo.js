@@ -1,6 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function ContactInfo() {
+  const validateName = name => {
+    const LEN = name.length;
+    let msg = '';
+
+    switch (true) {
+      case (LEN < 2):
+        msg = '최소 2자 이상 입력해주세요.';
+        break;
+      case (LEN > 20):
+        msg = '최대 20자까지 입력 가능합니다.';
+        break;
+      case (LEN !== name.match(/[a-zA-Z ]/g).length):
+        msg = '영어와 띄어쓰기만 입력 가능합니다.';
+        break;
+      default:
+      // console.log('유효한 이름입니다.');
+    }
+
+    return msg;
+  }
+
+  const validateNumber = numberText => {
+    const LEN = numberText.length;
+    let msg = '';
+
+    switch (true) {
+      case (LEN < 2):
+        msg = '최소 2자 이상 입력해주세요.';
+        break;
+      case (LEN > 20):
+        msg = '최대 20자까지 입력 가능합니다.';
+        break;
+      case (LEN !== numberText.match(/\d/g).length):
+        msg = '숫자만 입력 가능합니다';
+        break;
+      default:
+      // console.log('유효한 번호입니다.');
+    }
+
+    return msg;
+  }
+
+  const [name, setName] = useState('');
+  const [mobileNum, setMobileNum] = useState('');
+  const NAME_VALIDATE_MSG = validateName(name);
+  const MOBILE_VALIDATE_MSG = validateNumber(mobileNum);
+
   return (
     <div className='ContactInfo'>
       <h2 className='title'>
@@ -15,7 +62,15 @@ function ContactInfo() {
             className='name__input'
             type='text'
             placeholder='홍길동'
+            value={name}
+            onChange={e => setName(e.target.value)}
           />
+          {!!NAME_VALIDATE_MSG
+            ? (
+              <span className='name__msg'>{NAME_VALIDATE_MSG}</span>
+            )
+            : null
+          }
         </div>
         <div className='mobile-number--container'>
           <label className='mobile-number__label'>
@@ -26,9 +81,17 @@ function ContactInfo() {
           </select>
           <input
             className='mobile-number__input'
-            type='number'
+            type='text'
             placeholder="'-' 없이 입력해주세요"
+            value={mobileNum}
+            onChange={e => setMobileNum(e.target.value)}
           />
+          {!!MOBILE_VALIDATE_MSG
+            ? (
+              <span className='mobile-number__msg'>{MOBILE_VALIDATE_MSG}</span>
+            )
+            : null
+          }
         </div>
       </div>
     </div>
