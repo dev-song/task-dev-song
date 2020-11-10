@@ -29,7 +29,7 @@ function BirthDate() {
       </label>
       <input
         className='birth-date__input'
-        type='number'
+        type='text'
         placeholder='YYMMDD'
         value={birthDate}
         onChange={e => setBirthDate(e.target.value)}
