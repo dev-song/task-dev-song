@@ -22,7 +22,7 @@ function ContactInfo() {
             핸드폰 번호
           </label>
           <select className='mobile-number__country'>
-            <option selected>+82 (대한민국)</option>
+            <option defaultValue>+82 (대한민국)</option>
           </select>
           <input
             className='mobile-number__input'

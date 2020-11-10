@@ -30,15 +30,15 @@ function EstimatedTimeOfArrival() {
       </h2>
       <div className='eta__form'>
         <select className='eta__hour'>
-          <option>시</option>
+          <option defaultValue>시</option>
           {hours.map(hour => (
-            <option>{hour}시</option>
+            <option key={hour}>{hour}시</option>
           ))}
         </select>
         <select className='eta__minute'>
-          <option>분</option>
+          <option defaultValue>분</option>
           {minutes.map(minute => (
-            <option>{minute}분</option>
+            <option key={minute}>{minute}분</option>
           ))}
         </select>
       </div>
