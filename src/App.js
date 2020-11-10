@@ -9,14 +9,14 @@ import Payment from './Components/Payment';
 
 function App() {
   return (
-    <div className="App">
+    <form className="App">
       <TravelerInfo />
       <EstimatedTimeOfArrival />
       <ContactInfo />
       <ReservationInfo />
       <TermsAgreement />
       <Payment />
-    </div>
+    </form>
   );
 }
 

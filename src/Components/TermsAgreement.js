@@ -6,7 +6,7 @@ function TermsAgreement() {
       <h2 className='title'>
         약관 동의
       </h2>
-      <form className='terms-agreement__form'>
+      <div className='terms-agreement__form'>
         <input
           className='agreement-full__checkbox'
           type='checkbox'
@@ -34,7 +34,7 @@ function TermsAgreement() {
               </label>
           </div>
         </div>
-      </form>
+      </div>
     </div >
   );
 }

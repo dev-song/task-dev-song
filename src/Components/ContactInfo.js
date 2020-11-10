@@ -6,7 +6,7 @@ function ContactInfo() {
       <h2 className='title'>
         상세 핸드폰 정보
       </h2>
-      <form className='contact-info__form'>
+      <div className='contact-info__form'>
         <div className='name--container'>
           <label className='name__label'>
             사용자 이름
@@ -30,7 +30,7 @@ function ContactInfo() {
             placeholder="'-' 없이 입력해주세요"
           />
         </div>
-      </form>
+      </div>
     </div>
   );
 }

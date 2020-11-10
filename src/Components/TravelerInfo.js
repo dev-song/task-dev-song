@@ -12,12 +12,12 @@ function TravelerInfo() {
         여행자
         <span className='traveler-number'></span>
       </h2>
-      <form className='traveler-info__form'>
+      <div className='traveler-info__form'>
         <NameEnglish />
         <NameKorean />
         <GenderSelection />
         <BirthDate />
-      </form>
+      </div>
     </div>
   );
 }
