@@ -29,13 +29,13 @@ function EstimatedTimeOfArrival() {
         숙소 도착 예정 시간
       </h2>
       <form className='eta__form'>
-        <select className='hour__select'>
+        <select className='eta__hour'>
           <option>시</option>
           {hours.map(hour => (
             <option>{hour}시</option>
           ))}
         </select>
-        <select className='minute__select'>
+        <select className='eta__minute'>
           <option>분</option>
           {minutes.map(minute => (
             <option>{minute}분</option>
