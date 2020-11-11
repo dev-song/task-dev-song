@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function BirthDate({ paymentRequested }) {
+function BirthDate({ paymentRequested, passValidation }) {
   const validateBirthDate = date => {
     if (!paymentRequested && date === '') return;
 
@@ -23,6 +23,8 @@ function BirthDate({ paymentRequested }) {
 
   const [birthDate, setBirthDate] = useState('');
   const BIRTHDATE_VALIDATE_MSG = validateBirthDate(birthDate);
+
+  passValidation(!BIRTHDATE_VALIDATE_MSG && paymentRequested);
 
   return (
     <div className='BirthDate'>

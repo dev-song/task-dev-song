@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function EstimatedTimeOfArrival({ paymentRequested }) {
+function EstimatedTimeOfArrival({ paymentRequested, passValidation }) {
   const HOUR_LIST = new Array(24).fill(0).map((v, i) => i);
   const MINUTE_LIST = new Array(60).fill(0).map((v, i) => i);
   const validateTime = (hourText, minuteText) => {
@@ -15,6 +15,8 @@ function EstimatedTimeOfArrival({ paymentRequested }) {
   const [hourSelected, setHourSelected] = useState('시');
   const [minuteSelected, setMinuteSelected] = useState('분');
   const ETA_VALIDATE_MSG = validateTime(hourSelected, minuteSelected);
+
+  passValidation(!ETA_VALIDATE_MSG && paymentRequested);
 
   return (
     <div className='EstimatedTimeOfArrival'>

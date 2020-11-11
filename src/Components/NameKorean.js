@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NameKorean({ paymentRequested }) {
+function NameKorean({ paymentRequested, passValidation }) {
   const validateName = name => {
     if (!paymentRequested && name === '') return;
 
@@ -26,6 +26,8 @@ function NameKorean({ paymentRequested }) {
 
   const [name, setName] = useState('');
   const NAME_VALIDATE_MSG = validateName(name);
+
+  passValidation(!NAME_VALIDATE_MSG && paymentRequested);
 
   return (
     <div className='NameKorean'>

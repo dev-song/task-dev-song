@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NameEnglish({ paymentRequested }) {
+function NameEnglish({ paymentRequested, passValidation }) {
   const validateName = name => {
     if (!paymentRequested && name === '') return;
 
@@ -28,6 +28,8 @@ function NameEnglish({ paymentRequested }) {
   const [lastName, setLastName] = useState('');
   const FIRST_NAME_VALIDATE_MSG = validateName(firstName);
   const LAST_NAME_VALIDATE_MSG = validateName(lastName);
+
+  passValidation(!FIRST_NAME_VALIDATE_MSG && !LAST_NAME_VALIDATE_MSG && paymentRequested);
 
   return (
     <div className='NameEnglish'>
