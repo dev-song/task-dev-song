@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ReservationInfo({ paymentRequested }) {
+function ReservationInfo({ paymentRequested, passValidation }) {
   const validateText = text => {
     if (!paymentRequested && text === '') return;
 
@@ -23,6 +23,8 @@ function ReservationInfo({ paymentRequested }) {
 
   const [reservationInfo, setReservationInfo] = useState('');
   const INFO_VALIDATE_MSG = validateText(reservationInfo);
+
+  passValidation(!INFO_VALIDATE_MSG && paymentRequested);
 
   return (
     <div className='ReservationInfo'>

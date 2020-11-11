@@ -10,9 +10,13 @@ import Payment from './Components/Payment';
 function App() {
   const [mainTermAgreed, setMainTermAgreed] = useState(false);
   const [paymentRequested, setPaymentRequested] = useState(false);
+  const [validationPassed, setValidationPassed] = useState(false);
   const handleMainTerm = agreed => {
     setMainTermAgreed(agreed);
   };
+  const passValidation = result => {
+    setValidationPassed(result);
+  }
 
   return (
     <form
@@ -24,21 +28,26 @@ function App() {
     >
       <TravelerInfo
         paymentRequested={paymentRequested}
+        passValidation={passValidation}
       />
       <EstimatedTimeOfArrival
         paymentRequested={paymentRequested}
+        passValidation={passValidation}
       />
       <ContactInfo
         paymentRequested={paymentRequested}
+        passValidation={passValidation}
       />
       <ReservationInfo
         paymentRequested={paymentRequested}
+        passValidation={passValidation}
       />
       <TermsAgreement
         handleMainTerm={handleMainTerm}
       />
       <Payment
         mainTermAgreed={mainTermAgreed}
+        validationPassed={validationPassed}
       />
     </form>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ContactInfo({ paymentRequested }) {
+function ContactInfo({ paymentRequested, passValidation }) {
   const validateName = name => {
     if (!paymentRequested && name === '') return;
 
@@ -51,6 +51,8 @@ function ContactInfo({ paymentRequested }) {
   const [mobileNum, setMobileNum] = useState('');
   const NAME_VALIDATE_MSG = validateName(name);
   const MOBILE_VALIDATE_MSG = validateNumber(mobileNum);
+
+  passValidation(!NAME_VALIDATE_MSG && !MOBILE_VALIDATE_MSG && paymentRequested);
 
   return (
     <div className='ContactInfo'>

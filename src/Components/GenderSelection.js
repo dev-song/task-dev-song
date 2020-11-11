@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function GenderSelection({ paymentRequested }) {
+function GenderSelection({ paymentRequested, passValidation }) {
   const validateGender = userGender => {
     if (!paymentRequested) return;
 
@@ -19,6 +19,8 @@ function GenderSelection({ paymentRequested }) {
 
   const [gender, setGender] = useState('');
   const GENDER_VALIDATE_MSG = validateGender(gender);
+
+  passValidation(!GENDER_VALIDATE_MSG && paymentRequested);
 
   return (
     <div className='GenderSelection'>
