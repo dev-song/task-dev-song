@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
-function TermsAgreement() {
-  const [wholeAgreement, setWholeAgreement] = useState(false);
-  const [mainAgreement, setMainAgreement] = useState(false);
-  const [subAgreement, setSubAgreement] = useState(false);
+function TermsAgreement({ handleMainTerm }) {
+  const [wholeTerm, setWholeTerm] = useState(false);
+  const [mainTerm, setMainTerm] = useState(false);
+  const [subTerm, setSubTerm] = useState(false);
 
   const handleAllTerms = e => {
     const CHECKED = e.target.checked;
 
-    setWholeAgreement(CHECKED);
-    setMainAgreement(CHECKED);
-    setSubAgreement(CHECKED);
+    setWholeTerm(CHECKED);
+    setMainTerm(CHECKED);
+    setSubTerm(CHECKED);
   }
 
   useEffect(() => {
-    setWholeAgreement(mainAgreement && subAgreement);
-  }, [mainAgreement, subAgreement]);
+    setWholeTerm(mainTerm && subTerm);
+    handleMainTerm(mainTerm);
+  }, [mainTerm, subTerm, handleMainTerm]);
 
   return (
     <div className='TermsAgreement'>
@@ -26,7 +27,7 @@ function TermsAgreement() {
         <input
           className='agreement-full__checkbox'
           type='checkbox'
-          checked={wholeAgreement}
+          checked={wholeTerm}
           onChange={e => handleAllTerms(e)}
         />
         <label className='agreement-full__label'>
@@ -37,8 +38,8 @@ function TermsAgreement() {
             <input
               className='sub-terms__checkbox'
               type='checkbox'
-              checked={mainAgreement}
-              onChange={() => setMainAgreement(!mainAgreement)}
+              checked={mainTerm}
+              onChange={() => setMainTerm(!mainTerm)}
             />
             <label className='sub-terms__label'>
               여행자 약관 동의 (필수)
@@ -48,8 +49,8 @@ function TermsAgreement() {
             <input
               className='sub-terms__checkbox'
               type='checkbox'
-              checked={subAgreement}
-              onChange={() => setSubAgreement(!subAgreement)}
+              checked={subTerm}
+              onChange={() => setSubTerm(!subTerm)}
             />
             <label className='sub-terms__label'>
               특가 항공권 및 할인 혜택 안내 동의 (선택)
