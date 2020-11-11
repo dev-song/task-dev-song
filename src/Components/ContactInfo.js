@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-function ContactInfo() {
+function ContactInfo({ paymentRequested }) {
   const validateName = name => {
+    if (!paymentRequested && name === '') return;
+
     const LEN = name.length;
     let msg = '';
 
@@ -23,6 +25,8 @@ function ContactInfo() {
   }
 
   const validateNumber = numberText => {
+    if (!paymentRequested && numberText === '') return;
+
     const LEN = numberText.length;
     let msg = '';
 

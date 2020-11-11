@@ -1,27 +1,29 @@
 import React, { useState } from 'react';
 
-function validateName(name) {
-  const LEN = name.length;
-  let msg = '';
+function NameEnglish({ paymentRequested }) {
+  const validateName = name => {
+    if (!paymentRequested && name === '') return;
 
-  switch (true) {
-    case (LEN < 2):
-      msg = '최소 2자 이상 입력해주세요.';
-      break;
-    case (LEN > 20):
-      msg = '최대 20자까지 입력 가능합니다.';
-      break;
-    case (LEN !== name.match(/[a-zA-Z ]/g).length):
-      msg = '영어와 띄어쓰기만 입력 가능합니다.';
-      break;
-    default:
-    // console.log('유효한 이름입니다.');
-  }
+    const LEN = name.length;
+    let msg = '';
 
-  return msg;
-}
+    switch (true) {
+      case (LEN < 2):
+        msg = '최소 2자 이상 입력해주세요.';
+        break;
+      case (LEN > 20):
+        msg = '최대 20자까지 입력 가능합니다.';
+        break;
+      case (LEN !== name.match(/[a-zA-Z ]/g).length):
+        msg = '영어와 띄어쓰기만 입력 가능합니다.';
+        break;
+      default:
+      // console.log('유효한 이름입니다.');
+    }
 
-function NameEnglish() {
+    return msg;
+  };
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const FIRST_NAME_VALIDATE_MSG = validateName(firstName);

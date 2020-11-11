@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-function ReservationInfo() {
+function ReservationInfo({ paymentRequested }) {
   const validateText = text => {
+    if (!paymentRequested && text === '') return;
+
     const LEN = text.length;
     let msg = '';
 

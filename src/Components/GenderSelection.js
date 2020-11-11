@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 
-function GenderSelection() {
-  const [gender, setGender] = useState('');
+function GenderSelection({ paymentRequested }) {
+  const validateGender = userGender => {
+    if (!paymentRequested) return;
 
+    let msg = '';
+    if (!userGender) msg = '성별을 선택해주세요.';
+
+    return msg;
+  };
   const handleClick = e => {
     if (gender === e.target.parentNode.value) {
       e.target.parentNode.value = null;
@@ -11,9 +17,8 @@ function GenderSelection() {
     setGender(e.target.parentNode.value);
   };
 
-  const validateGender = userGender => {
-    return !!userGender;
-  }
+  const [gender, setGender] = useState('');
+  const GENDER_VALIDATE_MSG = validateGender(gender);
 
   return (
     <div className='GenderSelection'>
@@ -36,9 +41,9 @@ function GenderSelection() {
           여
         </option>
       </select>
-      {!validateGender(gender)
+      {!!GENDER_VALIDATE_MSG
         ? (
-          <span className='gender__msg'>성별을 선택해주세요.</span>
+          <span className='gender__msg'>{GENDER_VALIDATE_MSG}</span>
         )
         : null
       }

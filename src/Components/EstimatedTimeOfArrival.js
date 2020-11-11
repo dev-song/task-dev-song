@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 
-function EstimatedTimeOfArrival() {
-  const createHourList = () => new Array(24).fill(0).map((v, i) => i);
-  const createMinuteList = () => new Array(60).fill(0).map((v, i) => i);
+function EstimatedTimeOfArrival({ paymentRequested }) {
+  const HOUR_LIST = new Array(24).fill(0).map((v, i) => i);
+  const MINUTE_LIST = new Array(60).fill(0).map((v, i) => i);
   const validateTime = (hourText, minuteText) => {
-    if (hourText === '시' || minuteText === '분') return false;
-    return true;
+    if (!paymentRequested) return;
+
+    let msg = '';
+    if (hourText === '시' || minuteText === '분') msg = '숙소 도착 예정 시간을 선택해주세요.';
+
+    return msg;
   }
 
   const [hourSelected, setHourSelected] = useState('시');
   const [minuteSelected, setMinuteSelected] = useState('분');
+  const ETA_VALIDATE_MSG = validateTime(hourSelected, minuteSelected);
 
   return (
     <div className='EstimatedTimeOfArrival'>
@@ -22,7 +27,7 @@ function EstimatedTimeOfArrival() {
           onChange={e => setHourSelected(e.target.value)}
         >
           <option defaultValue>시</option>
-          {createHourList().map(hour => (
+          {HOUR_LIST.map(hour => (
             <option key={hour}>{hour}시</option>
           ))}
         </select>
@@ -31,13 +36,13 @@ function EstimatedTimeOfArrival() {
           onChange={e => setMinuteSelected(e.target.value)}
         >
           <option defaultValue>분</option>
-          {createMinuteList().map(minute => (
+          {MINUTE_LIST.map(minute => (
             <option key={minute}>{minute}분</option>
           ))}
         </select>
-        {!validateTime(hourSelected, minuteSelected)
+        {!!ETA_VALIDATE_MSG
           ? (
-            <span className='eta__msg'>숙소 도착 예정 시간을 선택해주세요.</span>
+            <span className='eta__msg'>{ETA_VALIDATE_MSG}</span>
           )
           : null
         }

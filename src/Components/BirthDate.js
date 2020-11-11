@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-function BirthDate() {
+function BirthDate({ paymentRequested }) {
   const validateBirthDate = date => {
+    if (!paymentRequested && date === '') return;
+
     const LEN = date.length;
     let msg = '';
 
