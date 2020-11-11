@@ -5,7 +5,7 @@ import NameKorean from './NameKorean';
 import GenderSelection from './GenderSelection';
 import BirthDate from './BirthDate';
 
-function TravelerInfo() {
+function TravelerInfo({ paymentRequested }) {
   return (
     <div className='TravelerInfo'>
       <h2 className='title'>
@@ -13,10 +13,18 @@ function TravelerInfo() {
         <span className='traveler-number'></span>
       </h2>
       <div className='traveler-info__form'>
-        <NameEnglish />
-        <NameKorean />
-        <GenderSelection />
-        <BirthDate />
+        <NameEnglish
+          paymentRequested={paymentRequested}
+        />
+        <NameKorean
+          paymentRequested={paymentRequested}
+        />
+        <GenderSelection
+          paymentRequested={paymentRequested}
+        />
+        <BirthDate
+          paymentRequested={paymentRequested}
+        />
       </div>
     </div>
   );
