@@ -5,6 +5,7 @@ function ContactInfo({ paymentRequested, passValidation }) {
     if (!paymentRequested && name === '') return;
 
     const LEN = name.length;
+    const MATCHING_LETTERS = name.match(/[a-z ]/gi);
     let msg = '';
 
     switch (true) {
@@ -14,7 +15,7 @@ function ContactInfo({ paymentRequested, passValidation }) {
       case (LEN > 20):
         msg = '최대 20자까지 입력 가능합니다.';
         break;
-      case (LEN !== name.match(/[a-zA-Z ]/g).length):
+      case (!MATCHING_LETTERS || LEN !== MATCHING_LETTERS.length):
         msg = '영어와 띄어쓰기만 입력 가능합니다.';
         break;
       default:

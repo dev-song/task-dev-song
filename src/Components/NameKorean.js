@@ -5,6 +5,7 @@ function NameKorean({ paymentRequested, passValidation }) {
     if (!paymentRequested && name === '') return;
 
     const LEN = name.length;
+    const MATCHING_LETTERS = name.match(/[가-힣]/g);
     let msg = '';
 
     switch (true) {
@@ -14,7 +15,7 @@ function NameKorean({ paymentRequested, passValidation }) {
       case (LEN > 20):
         msg = '최대 20자까지 입력 가능합니다.';
         break;
-      case (LEN !== name.match(/[가-힣]/g).length):
+      case (!MATCHING_LETTERS || LEN !== MATCHING_LETTERS.length):
         msg = '한글만 입력 가능합니다.';
         break;
       default:
