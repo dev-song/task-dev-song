@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/BirthDate.css';
 
 function BirthDate({ paymentRequested, passValidation }) {
   const validateBirthDate = date => {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 import TravelerInfo from './Components/TravelerInfo';
 import EstimatedTimeOfArrival from './Components/EstimatedTimeOfArrival';

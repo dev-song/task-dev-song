@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/TravelerInfo.css';
 
 import NameEnglish from './NameEnglish';
 import NameKorean from './NameKorean';
