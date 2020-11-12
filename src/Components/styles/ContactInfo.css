@@ -1,0 +1,18 @@
+.mobile-number--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mobile-number__label {
+  width: 100%;
+}
+
+.mobile-number__country {
+  width: 29%;
+}
+
+.mobile-number__input {
+  width: 69%;
+}

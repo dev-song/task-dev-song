@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/ContactInfo.css';
 
 function ContactInfo({ paymentRequested, passValidation }) {
   const validateName = name => {
