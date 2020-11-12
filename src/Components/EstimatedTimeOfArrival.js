@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/EstimatedTimeOfArrival.css';
 
 function EstimatedTimeOfArrival({ paymentRequested, passValidation }) {
   const HOUR_LIST = new Array(24).fill(0).map((v, i) => i);
