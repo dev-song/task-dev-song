@@ -19,7 +19,7 @@ function TermsAgreement({ handleMainTerm }) {
   }, [mainTerm, subTerm, handleMainTerm]);
 
   return (
-    <div className='TermsAgreement'>
+    <section className='TermsAgreement'>
       <h2 className='title'>
         약관 동의
       </h2>
@@ -58,7 +58,7 @@ function TermsAgreement({ handleMainTerm }) {
           </div>
         </div>
       </div>
-    </div >
+    </section >
   );
 }
 

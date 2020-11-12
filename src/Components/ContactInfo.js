@@ -56,7 +56,7 @@ function ContactInfo({ paymentRequested, passValidation }) {
   passValidation(!NAME_VALIDATE_MSG && !MOBILE_VALIDATE_MSG && paymentRequested);
 
   return (
-    <div className='ContactInfo'>
+    <section className='ContactInfo'>
       <h2 className='title'>
         상세 핸드폰 정보
       </h2>
@@ -101,7 +101,7 @@ function ContactInfo({ paymentRequested, passValidation }) {
           }
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

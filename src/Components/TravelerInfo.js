@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/TravelerInfo.css';
 
 import NameEnglish from './NameEnglish';
 import NameKorean from './NameKorean';
@@ -7,7 +8,7 @@ import BirthDate from './BirthDate';
 
 function TravelerInfo({ paymentRequested, passValidation }) {
   return (
-    <div className='TravelerInfo'>
+    <section className='TravelerInfo'>
       <h2 className='title'>
         여행자
         <span className='traveler-number'></span>
@@ -30,7 +31,7 @@ function TravelerInfo({ paymentRequested, passValidation }) {
           passValidation={passValidation}
         />
       </div>
-    </div>
+    </section>
   );
 }
 
