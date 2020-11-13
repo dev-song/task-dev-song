@@ -1,0 +1,16 @@
+.TermsAgreement {
+  border-bottom: none;
+}
+
+input[type='checkbox'] {
+  margin-right: 0.5rem;
+}
+
+.terms-agreement__sub-terms {
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.sub-terms--container:first-of-type {
+  margin-bottom: 0.5rem;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './styles/TermsAgreement.css';
 
 function TermsAgreement({ handleMainTerm }) {
   const [wholeTerm, setWholeTerm] = useState(false);
