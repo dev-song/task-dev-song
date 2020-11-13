@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/ReservationInfo.css';
 
 function ReservationInfo({ paymentRequested, passValidation }) {
   const validateText = text => {
