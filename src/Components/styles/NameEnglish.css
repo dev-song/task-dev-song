@@ -1,0 +1,15 @@
+.NameEnglish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-name--container,
+.last-name--container {
+  width: 49%;
+}
+
+.first-name__input,
+.last-name__input {
+  width: 100%;
+}

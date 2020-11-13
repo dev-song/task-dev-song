@@ -1,0 +1,10 @@
+.eta__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eta__hour,
+.eta__minute {
+  width: 49%;
+}
