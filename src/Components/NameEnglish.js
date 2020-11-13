@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/NameEnglish.css';
 
 function NameEnglish({ paymentRequested, passValidation }) {
   const validateName = name => {

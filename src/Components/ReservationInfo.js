@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/ReservationInfo.css';
 
 function ReservationInfo({ paymentRequested, passValidation }) {
   const validateText = text => {
@@ -27,7 +28,7 @@ function ReservationInfo({ paymentRequested, passValidation }) {
   passValidation(!INFO_VALIDATE_MSG && paymentRequested);
 
   return (
-    <div className='ReservationInfo'>
+    <section className='ReservationInfo'>
       <h2 className='title'>
         기타 예약 정보
       </h2>
@@ -48,7 +49,7 @@ function ReservationInfo({ paymentRequested, passValidation }) {
           : null
         }
       </div>
-    </div>
+    </section>
   );
 }
 

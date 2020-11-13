@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/EstimatedTimeOfArrival.css';
 
 function EstimatedTimeOfArrival({ paymentRequested, passValidation }) {
   const HOUR_LIST = new Array(24).fill(0).map((v, i) => i);
@@ -19,7 +20,7 @@ function EstimatedTimeOfArrival({ paymentRequested, passValidation }) {
   passValidation(!ETA_VALIDATE_MSG && paymentRequested);
 
   return (
-    <div className='EstimatedTimeOfArrival'>
+    <section className='EstimatedTimeOfArrival'>
       <h2 className='title'>
         숙소 도착 예정 시간
       </h2>
@@ -49,7 +50,7 @@ function EstimatedTimeOfArrival({ paymentRequested, passValidation }) {
           : null
         }
       </div>
-    </div>
+    </section>
   );
 }
 

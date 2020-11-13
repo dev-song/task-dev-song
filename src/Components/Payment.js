@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/Payment.css';
 
 function Payment({ mainTermAgreed }) {
   const CLASS_WITHOUT_AGREEMENT = 'payment__submit';

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/GenderSelection.css';
 
 function GenderSelection({ paymentRequested, passValidation }) {
   const validateGender = userGender => {
